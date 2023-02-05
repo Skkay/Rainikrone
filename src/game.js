@@ -13,6 +13,64 @@ const character = {
     },
 };
 
+const boardBoundary = {
+    x1: 0,
+    y1: 0,
+    x2: 10,
+    y2: 10,
+};
+
+const obstacles = [
+    {
+        position: {
+            x: 5,
+            y: 0,
+        },
+    },
+    {
+        position: {
+            x: 5,
+            y: 1,
+        },
+    },
+    {
+        position: {
+            x: 0,
+            y: 5,
+        },
+    },
+    {
+        position: {
+            x: 1,
+            y: 5,
+        },
+    },
+    {
+        position: {
+            x: 9,
+            y: 5,
+        },
+    },
+    {
+        position: {
+            x: 10,
+            y: 5,
+        },
+    },
+    {
+        position: {
+            x: 5,
+            y: 9,
+        },
+    },
+    {
+        position: {
+            x: 5,
+            y: 10,
+        },
+    },
+];
+
 const init = () => {
     const cells = document.querySelectorAll('.cell:not(.wall):not(.start):not(.pink-cell)');
 
@@ -26,6 +84,10 @@ const init = () => {
 };
 
 const moveCharacterTo = (x, y) => {
+    if (positionIsObstacle(x, y) || positionIsOutOfBounds(x, y)) {
+        return false;
+    }
+
     const left = CELL_WIDTH / 2 - CHARACTER_WIDTH / 2 + BOARD_PADDING + (x * CELL_WIDTH + x * GRID_GAP);
     const top = CELL_WIDTH / 2 - CHARACTER_WIDTH / 2 + BOARD_PADDING + (y * CELL_WIDTH + y * GRID_GAP);
 
@@ -51,6 +113,18 @@ const moveCharacterUp = () => {
 
 const moveCharacterDown = () => {
     moveCharacterTo(character.position.x, character.position.y + 1);
+};
+
+const positionIsObstacle = (x, y) => {
+    const isObstacle = obstacles.some((obstacle) => {
+        return obstacle.position.x === x && obstacle.position.y === y;
+    });
+
+    return isObstacle;
+};
+
+const positionIsOutOfBounds = (x, y) => {
+    return x < boardBoundary.x1 || y < boardBoundary.y1 || x > boardBoundary.x2 || y > boardBoundary.y2;
 };
 
 export { init, moveCharacterLeft, moveCharacterRight, moveCharacterUp, moveCharacterDown };
