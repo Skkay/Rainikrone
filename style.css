@@ -26,6 +26,7 @@ body {
     grid-column-gap: 2px;
     grid-row-gap: 2px;
     padding: 5px;
+    position: relative;
 }
 
 .cell {
@@ -56,4 +57,12 @@ body {
 
 .wall {
     visibility: hidden;
+}
+
+#character {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background-color: blueviolet;
+    border-radius: 50%;
 }
