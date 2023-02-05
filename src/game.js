@@ -20,6 +20,37 @@ const boardBoundary = {
     y2: 10,
 };
 
+const objectives = [
+    {
+        done: false,
+        position: {
+            x: 0,
+            y: 0,
+        },
+    },
+    {
+        done: false,
+        position: {
+            x: 10,
+            y: 0,
+        },
+    },
+    {
+        done: false,
+        position: {
+            x: 0,
+            y: 10,
+        },
+    },
+    {
+        done: false,
+        position: {
+            x: 10,
+            y: 10,
+        },
+    },
+];
+
 const obstacles = [
     {
         position: {
@@ -97,6 +128,10 @@ const moveCharacterTo = (x, y) => {
 
     character.position.x = x;
     character.position.y = y;
+
+    if (positionIsObjective(x, y) && isAllObjectiveDone()) {
+        console.log('All done !');
+    }
 };
 
 const moveCharacterLeft = () => {
@@ -125,6 +160,26 @@ const positionIsObstacle = (x, y) => {
 
 const positionIsOutOfBounds = (x, y) => {
     return x < boardBoundary.x1 || y < boardBoundary.y1 || x > boardBoundary.x2 || y > boardBoundary.y2;
+};
+
+const positionIsObjective = (x, y) => {
+    const isObjective = objectives.some((objective) => {
+        if (objective.position.x === x && objective.position.y === y) {
+            objective.done = true;
+
+            return true;
+        }
+
+        return false;
+    });
+
+    return isObjective;
+};
+
+const isAllObjectiveDone = () => {
+    const allDone = !objectives.some((objective) => objective.done === false);
+
+    return allDone;
 };
 
 export { init, moveCharacterLeft, moveCharacterRight, moveCharacterUp, moveCharacterDown };
