@@ -27,6 +27,16 @@ class Game {
             }
         }
     }
+
+    init() {
+        this.board.cells.forEach((element) => {
+            const cell = this.cells.find((a) => {
+                return a.x === element.position.x && a.y === element.position.y;
+            });
+
+            cell.updateType(element.type);
+        });
+    }
 }
 
 export default Game;
