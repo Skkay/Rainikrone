@@ -1,6 +1,9 @@
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     background-color: #f6f6f6;
+
+    --grid-columns: 0;
+    --grid-rows: 0;
 }
 
 body {
@@ -18,11 +21,11 @@ body {
     text-align: center;
 }
 
-.container {
+#container {
     background-color: #303030;
     display: grid;
-    grid-template-columns: repeat(11, 1fr);
-    grid-template-rows: repeat(11, 1fr);
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-column-gap: 2px;
     grid-row-gap: 2px;
     padding: 5px;
@@ -35,27 +38,27 @@ body {
     height: 50px;
 }
 
-.red-cell {
+.red {
     background-color: #ff9595;
 }
 
-.green-cell {
+.green {
     background-color: #bde672;
 }
 
-.yellow-cell {
+.yellow {
     background-color: #f4e484;
 }
 
-.black-cell {
+.black {
     background-color: #6d6658;
 }
 
-.pink-cell {
+.objective {
     background-color: #f6aace;
 }
 
-.wall {
+.obstacle {
     visibility: hidden;
 }
 
