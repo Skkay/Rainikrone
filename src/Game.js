@@ -11,9 +11,8 @@ class Game {
     }
 
     bootstrap() {
-        // find max x and max y in board
-        const maxX = 10;
-        const maxY = 10;
+        const maxX = Math.max(...this.board.cells.map((element) => element.position.x));
+        const maxY = Math.max(...this.board.cells.map((element) => element.position.y));
 
         const rootEl = document.documentElement;
         rootEl.style.setProperty('--grid-columns', maxX + 1);
