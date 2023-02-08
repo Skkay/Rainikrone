@@ -1,4 +1,5 @@
 const VARIABLE_CELL_TYPES = ['red', 'yellow', 'black', 'green'];
+const VALID_CELL_TYPES = ['objective', 'obstacle', 'random', 'start', 'empty', ...VARIABLE_CELL_TYPES];
 
 class Cell {
     type;
@@ -10,38 +11,23 @@ class Cell {
         const cellEl = document.createElement('div');
         cellEl.classList.add('cell');
 
-        switch (type) {
-            case 'objective':
-                cellEl.classList.add('objective');
-                break;
-            case 'obstacle':
-                cellEl.classList.add('obstacle');
-                break;
-            case 'red':
-                cellEl.classList.add('red');
-                break;
-            case 'green':
-                cellEl.classList.add('green');
-                break;
-            case 'yellow':
-                cellEl.classList.add('yellow');
-                break;
-            case 'black':
-                cellEl.classList.add('black');
-                break;
-            case 'random':
-                cellEl.classList.add(VARIABLE_CELL_TYPES[Math.floor(Math.random() * VARIABLE_CELL_TYPES.length)]);
-                break;
-            case 'empty':
-                break;
-            default:
-                throw Error(`Unknown cell type: ${type}`);
+        this.cellEl = cellEl;
+        this.x = x;
+        this.y = y;
+        this.updateType(type);
+    }
+
+    updateType(type) {
+        if (!VALID_CELL_TYPES.includes(type)) {
+            throw Error(`Unknown cell type: ${type}`);
+        }
+
+        if (type === 'random') {
+            type = VARIABLE_CELL_TYPES[Math.floor(Math.random() * VARIABLE_CELL_TYPES.length)];
         }
 
         this.type = type;
-        this.x = x;
-        this.y = y;
-        this.cellEl = cellEl;
+        this.cellEl.classList.add(type);
     }
 }
 
