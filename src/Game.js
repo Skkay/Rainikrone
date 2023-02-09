@@ -1,9 +1,11 @@
 import Cell from './Cell';
+import Player from './Player';
 
 class Game {
     cells = [];
     board;
     containerEl;
+    player;
 
     constructor(board, containerEl) {
         this.board = board;
@@ -35,6 +37,13 @@ class Game {
             });
 
             cell.updateType(element.type);
+
+            if (element.type === 'start') {
+                const player = new Player(element.position.x, element.position.y);
+
+                this.containerEl.appendChild(player.playerEl);
+                this.player = player;
+            }
         });
     }
 }

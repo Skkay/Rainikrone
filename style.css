@@ -62,7 +62,7 @@ body {
     visibility: hidden;
 }
 
-#character {
+#player {
     position: absolute;
     width: 34px;
     height: 34px;
