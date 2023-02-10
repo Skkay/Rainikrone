@@ -32,10 +32,7 @@ class Game {
 
     init() {
         this.board.cells.forEach((element) => {
-            const cell = this.cells.find((a) => {
-                return a.x === element.position.x && a.y === element.position.y;
-            });
-
+            const cell = this.getCellAtCoords(element.position.x, element.position.y);
             cell.updateType(element.type);
 
             if (element.type === 'start') {
@@ -45,6 +42,9 @@ class Game {
                 this.player = player;
             }
         });
+    }
+    getCellAtCoords(x, y) {
+        return this.cells.find((cell) => cell.x === x && cell.y === y);
     }
 }
 
