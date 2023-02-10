@@ -43,6 +43,22 @@ class Game {
             }
         });
     }
+
+    movePlayerLeft() {
+        this.player.moveTo(this.player.x - 1, this.player.y);
+    }
+
+    movePlayerRight() {
+        this.player.moveTo(this.player.x + 1, this.player.y);
+    }
+
+    movePlayerUp() {
+        this.player.moveTo(this.player.x, this.player.y - 1);
+    }
+
+    movePlayerDown() {
+        this.player.moveTo(this.player.x, this.player.y + 1);
+    }
     getCellAtCoords(x, y) {
         return this.cells.find((cell) => cell.x === x && cell.y === y);
     }

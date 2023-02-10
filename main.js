@@ -1,6 +1,11 @@
 import './style.css';
 import Game from './src/Game';
 
+const moveLeftButton = document.getElementById('moveLeftButton');
+const moveRightButton = document.getElementById('moveRightButton');
+const moveUpButton = document.getElementById('moveUpButton');
+const moveDownButton = document.getElementById('moveDownButton');
+
 fetch('board.json')
     .then((res) => res.json())
     .then((board) => {
@@ -8,4 +13,9 @@ fetch('board.json')
 
         game.bootstrap();
         game.init();
+
+        moveLeftButton.addEventListener('click', () => game.movePlayerLeft());
+        moveRightButton.addEventListener('click', () => game.movePlayerRight());
+        moveUpButton.addEventListener('click', () => game.movePlayerUp());
+        moveDownButton.addEventListener('click', () => game.movePlayerDown());
     });
