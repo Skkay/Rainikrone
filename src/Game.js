@@ -103,6 +103,8 @@ class Game {
 
         if (currentCell.type === 'yellow') {
             this.triggerYellowCellEffect();
+        } else if (currentCell.type === 'green') {
+            this.triggerGreenCellEffect();
         }
     }
 
@@ -115,6 +117,18 @@ class Game {
             this.movePlayerUp();
         } else if (this.player.y > this.player.previousY) {
             this.movePlayerDown();
+        }
+    }
+
+    triggerGreenCellEffect() {
+        if (this.player.x < this.player.previousX) {
+            this.movePlayerRight();
+        } else if (this.player.x > this.player.previousX) {
+            this.movePlayerLeft();
+        } else if (this.player.y < this.player.previousY) {
+            this.movePlayerDown();
+        } else if (this.player.y > this.player.previousY) {
+            this.movePlayerUp();
         }
     }
 
