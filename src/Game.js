@@ -102,19 +102,19 @@ class Game {
         const currentCell = this.getCellAtCoords(this.player.x, this.player.y);
 
         if (currentCell.type === 'yellow') {
-            currentCell.rotateType();
-            this.triggerYellowCellEffect();
+            this.triggerYellowCellEffect(currentCell);
         } else if (currentCell.type === 'green') {
-            currentCell.rotateType();
-            this.triggerGreenCellEffect();
+            this.triggerGreenCellEffect(currentCell);
         } else if (currentCell.type === 'red') {
-            currentCell.rotateType();
+            this.triggerRedCellEffect(currentCell);
         } else if (currentCell.type === 'black') {
-            currentCell.rotateType();
+            this.triggerBlackCellEffect(currentCell);
         }
     }
 
-    triggerYellowCellEffect() {
+    triggerYellowCellEffect(cell) {
+        cell.rotateType();
+
         if (this.player.x < this.player.previousX) {
             this.movePlayerLeft();
         } else if (this.player.x > this.player.previousX) {
@@ -126,7 +126,9 @@ class Game {
         }
     }
 
-    triggerGreenCellEffect() {
+    triggerGreenCellEffect(cell) {
+        cell.rotateType();
+
         if (this.player.x < this.player.previousX) {
             this.movePlayerRight();
         } else if (this.player.x > this.player.previousX) {
@@ -136,6 +138,14 @@ class Game {
         } else if (this.player.y > this.player.previousY) {
             this.movePlayerUp();
         }
+    }
+
+    triggerRedCellEffect(cell) {
+        cell.rotateType();
+    }
+
+    triggerBlackCellEffect(cell) {
+        cell.rotateType();
     }
 
     getCellAtCoords(x, y) {
