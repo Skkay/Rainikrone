@@ -59,6 +59,7 @@ class Game {
         }
 
         this.player.moveTo(destX, destY);
+        this.triggerCellEffect();
     }
 
     movePlayerRight() {
@@ -70,6 +71,7 @@ class Game {
         }
 
         this.player.moveTo(destX, destY);
+        this.triggerCellEffect();
     }
 
     movePlayerUp() {
@@ -81,6 +83,7 @@ class Game {
         }
 
         this.player.moveTo(destX, destY);
+        this.triggerCellEffect();
     }
 
     movePlayerDown() {
@@ -92,6 +95,13 @@ class Game {
         }
 
         this.player.moveTo(destX, destY);
+        this.triggerCellEffect();
+    }
+
+    triggerCellEffect() {
+        const currentCell = this.getCellAtCoords(this.player.x, this.player.y);
+
+        console.log(currentCell.type);
     }
 
     getCellAtCoords(x, y) {
