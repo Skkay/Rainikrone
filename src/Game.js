@@ -6,6 +6,7 @@ class Game {
     board;
     containerEl;
     player;
+    boardFeatures = {};
 
     constructor(board, containerEl) {
         this.board = board;
@@ -28,6 +29,11 @@ class Game {
                 this.cells.push(cell);
             }
         }
+
+        this.boardFeatures.minX = 0;
+        this.boardFeatures.maxX = maxX;
+        this.boardFeatures.minY = 0;
+        this.boardFeatures.maxY = maxY;
     }
 
     init() {
@@ -45,22 +51,66 @@ class Game {
     }
 
     movePlayerLeft() {
-        this.player.moveTo(this.player.x - 1, this.player.y);
+        const destX = this.player.x - 1;
+        const destY = this.player.y;
+
+        if (!this.canPlayerMoveTo(destX, destY)) {
+            return;
+        }
+
+        this.player.moveTo(destX, destY);
     }
 
     movePlayerRight() {
-        this.player.moveTo(this.player.x + 1, this.player.y);
+        const destX = this.player.x + 1;
+        const destY = this.player.y;
+
+        if (!this.canPlayerMoveTo(destX, destY)) {
+            return;
+        }
+
+        this.player.moveTo(destX, destY);
     }
 
     movePlayerUp() {
-        this.player.moveTo(this.player.x, this.player.y - 1);
+        const destX = this.player.x;
+        const destY = this.player.y - 1;
+
+        if (!this.canPlayerMoveTo(destX, destY)) {
+            return;
+        }
+
+        this.player.moveTo(destX, destY);
     }
 
     movePlayerDown() {
-        this.player.moveTo(this.player.x, this.player.y + 1);
+        const destX = this.player.x;
+        const destY = this.player.y + 1;
+
+        if (!this.canPlayerMoveTo(destX, destY)) {
+            return;
+        }
+
+        this.player.moveTo(destX, destY);
     }
+
     getCellAtCoords(x, y) {
         return this.cells.find((cell) => cell.x === x && cell.y === y);
+    }
+
+    canPlayerMoveTo(x, y) {
+        // Check if position is out of boundaries
+        if (x < this.boardFeatures.minX || y < this.boardFeatures.minY || x > this.boardFeatures.maxX || y > this.boardFeatures.maxY) {
+            return false;
+        }
+
+        // Check if cell at coords is an obstacle
+        const cell = this.getCellAtCoords(x, y);
+        if (cell.type === 'obstacle') {
+            return false;
+        }
+
+        return true;
     }
 }
 
