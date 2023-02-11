@@ -101,7 +101,21 @@ class Game {
     triggerCellEffect() {
         const currentCell = this.getCellAtCoords(this.player.x, this.player.y);
 
-        console.log(currentCell.type);
+        if (currentCell.type === 'yellow') {
+            this.triggerYellowCellEffect();
+        }
+    }
+
+    triggerYellowCellEffect() {
+        if (this.player.x < this.player.previousX) {
+            this.movePlayerLeft();
+        } else if (this.player.x > this.player.previousX) {
+            this.movePlayerRight();
+        } else if (this.player.y < this.player.previousY) {
+            this.movePlayerUp();
+        } else if (this.player.y > this.player.previousY) {
+            this.movePlayerDown();
+        }
     }
 
     getCellAtCoords(x, y) {
