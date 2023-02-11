@@ -102,9 +102,15 @@ class Game {
         const currentCell = this.getCellAtCoords(this.player.x, this.player.y);
 
         if (currentCell.type === 'yellow') {
+            currentCell.rotateType();
             this.triggerYellowCellEffect();
         } else if (currentCell.type === 'green') {
+            currentCell.rotateType();
             this.triggerGreenCellEffect();
+        } else if (currentCell.type === 'red') {
+            currentCell.rotateType();
+        } else if (currentCell.type === 'black') {
+            currentCell.rotateType();
         }
     }
 
