@@ -1,6 +1,8 @@
 import Cell from './Cell';
 import Player from './Player';
 
+const VARIABLE_CELL_TYPES = ['red', 'yellow', 'black', 'green'];
+
 class Game {
     cells = [];
     board;
@@ -142,13 +144,44 @@ class Game {
 
     triggerRedCellEffect(cell) {
         cell.rotateType();
+
+        const redCellTypeRotation = {
+            yellow: 'red',
+            red: 'green',
+            green: 'black',
+            black: 'yellow',
+        };
+
+        const aboveCell = this.getCellAtCoords(cell.x, cell.y - 1, true);
+        if (aboveCell) {
+            aboveCell.updateType(redCellTypeRotation[aboveCell.type]);
+        }
+
+        const belowCell = this.getCellAtCoords(cell.x, cell.y + 1, true);
+        if (belowCell) {
+            belowCell.updateType(redCellTypeRotation[belowCell.type]);
+        }
+
+        const leftCell = this.getCellAtCoords(cell.x - 1, cell.y, true);
+        if (leftCell) {
+            leftCell.updateType(redCellTypeRotation[leftCell.type]);
+        }
+
+        const rightCell = this.getCellAtCoords(cell.x + 1, cell.y, true);
+        if (rightCell) {
+            rightCell.updateType(redCellTypeRotation[rightCell.type]);
+        }
     }
 
     triggerBlackCellEffect(cell) {
         cell.rotateType();
     }
 
-    getCellAtCoords(x, y) {
+    getCellAtCoords(x, y, variableCellOnly = false) {
+        if (variableCellOnly === true) {
+            return this.cells.find((cell) => cell.x === x && cell.y === y && VARIABLE_CELL_TYPES.includes(cell.type));
+        }
+
         return this.cells.find((cell) => cell.x === x && cell.y === y);
     }
 
