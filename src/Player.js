@@ -11,12 +11,16 @@ class Player {
     x;
     y;
     playerEl;
+    checkpointX;
+    checkpointY;
 
     constructor(startX, startY) {
         const playerEl = document.createElement('div');
         playerEl.setAttribute('id', 'player');
 
         this.playerEl = playerEl;
+        this.checkpointX = startX;
+        this.checkpointY = startY;
         this.moveTo(startX, startY, startX, startY);
     }
 
@@ -41,6 +45,10 @@ class Player {
 
         this.x = x;
         this.y = y;
+    }
+
+    setCellCheckpoint(cell) {
+        this.cellCheckpoint = cell;
     }
 }
 

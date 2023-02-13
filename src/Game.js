@@ -175,6 +175,8 @@ class Game {
 
     triggerBlackCellEffect(cell) {
         cell.rotateType();
+
+        this.player.moveTo(this.player.checkpointX, this.player.checkpointY);
     }
 
     getCellAtCoords(x, y, variableCellOnly = false) {
