@@ -47,8 +47,9 @@ class Player {
         this.y = y;
     }
 
-    setCellCheckpoint(cell) {
-        this.cellCheckpoint = cell;
+    setCheckpoint(x, y) {
+        this.checkpointX = x;
+        this.checkpointY = y;
     }
 }
 
