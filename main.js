@@ -6,7 +6,7 @@ const moveRightButton = document.getElementById('moveRightButton');
 const moveUpButton = document.getElementById('moveUpButton');
 const moveDownButton = document.getElementById('moveDownButton');
 
-fetch('board.json')
+fetch('boards/default.json')
     .then((res) => res.json())
     .then((board) => {
         const game = new Game(board, document.getElementById('container'));
