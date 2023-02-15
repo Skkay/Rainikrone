@@ -33,7 +33,7 @@ class Cell {
         }
 
         this.type = type;
-        this.cellEl.classList.remove(...VARIABLE_CELL_TYPES);
+        this.cellEl.classList.remove(...VALID_CELL_TYPES);
         this.cellEl.classList.add(type);
     }
 
