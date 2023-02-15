@@ -9,10 +9,12 @@ class Game {
     containerEl;
     player;
     boardFeatures = {};
+    remainingObjectives;
 
     constructor(board, containerEl) {
         this.board = board;
         this.containerEl = containerEl;
+        this.remainingObjectives = 0;
     }
 
     bootstrap() {
@@ -48,6 +50,8 @@ class Game {
 
                 this.containerEl.appendChild(player.playerEl);
                 this.player = player;
+            } else if (element.type === 'objective') {
+                this.remainingObjectives += 1;
             }
         });
     }
@@ -111,6 +115,8 @@ class Game {
             this.triggerRedCellEffect(currentCell);
         } else if (currentCell.type === 'black') {
             this.triggerBlackCellEffect(currentCell);
+        } else if (currentCell.type === 'objective') {
+            this.triggerObjectiveCellEffect(currentCell);
         }
     }
 
@@ -177,6 +183,17 @@ class Game {
         cell.rotateType();
 
         this.player.moveTo(this.player.checkpointX, this.player.checkpointY);
+    }
+
+    triggerObjectiveCellEffect(cell) {
+        cell.updateType('empty');
+
+        this.player.setCheckpoint(cell.x, cell.y);
+        this.remainingObjectives -= 1;
+
+        if (this.remainingObjectives === 0) {
+            console.log('Done');
+        }
     }
 
     getCellAtCoords(x, y, variableCellOnly = false) {
