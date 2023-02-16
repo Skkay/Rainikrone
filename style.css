@@ -28,6 +28,7 @@ body {
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-column-gap: 2px;
     grid-row-gap: 2px;
+    margin: 10px;
     padding: 5px;
     position: relative;
 }
@@ -68,4 +69,29 @@ body {
     height: 34px;
     background-color: blueviolet;
     border-radius: 50%;
+}
+
+.moveButton {
+    cursor: pointer;
+    border: 0;
+    color: #ffffff;
+    background-color: #2b3e50;
+    padding: 15px;
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.moveButton:hover {
+    background-color: #1e2831;
+}
+
+.moveButtonIcon {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
