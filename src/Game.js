@@ -17,6 +17,8 @@ class Game {
         this.containerEl = containerEl;
         this.remainingObjectives = 0;
         this.moveCount = 0;
+
+        this.playerMoveEvent = new Event('playerMove');
     }
 
     bootstrap() {
@@ -68,6 +70,7 @@ class Game {
 
         if (!collateralMove) {
             this.moveCount += 1;
+            document.dispatchEvent(this.playerMoveEvent);
         }
 
         this.player.moveTo(destX, destY);
@@ -84,6 +87,7 @@ class Game {
 
         if (!collateralMove) {
             this.moveCount += 1;
+            document.dispatchEvent(this.playerMoveEvent);
         }
 
         this.player.moveTo(destX, destY);
@@ -100,6 +104,7 @@ class Game {
 
         if (!collateralMove) {
             this.moveCount += 1;
+            document.dispatchEvent(this.playerMoveEvent);
         }
 
         this.player.moveTo(destX, destY);
@@ -116,6 +121,7 @@ class Game {
 
         if (!collateralMove) {
             this.moveCount += 1;
+            document.dispatchEvent(this.playerMoveEvent);
         }
 
         this.player.moveTo(destX, destY);

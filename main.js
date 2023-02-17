@@ -22,41 +22,25 @@ const startGame = (board) => {
     remainingObjectivesEl.innerText = game.remainingObjectives;
     moveCountEl.innerText = game.moveCount;
 
-    moveLeftButton.addEventListener('click', () => {
-        game.movePlayerLeft();
-        updateGameInfo(game);
-    });
-    moveRightButton.addEventListener('click', () => {
-        game.movePlayerRight();
-        updateGameInfo(game);
-    });
-    moveUpButton.addEventListener('click', () => {
-        game.movePlayerUp();
-        updateGameInfo(game);
-    });
-    moveDownButton.addEventListener('click', () => {
-        game.movePlayerDown();
-        updateGameInfo(game);
-    });
+    moveLeftButton.addEventListener('click', () => game.movePlayerLeft());
+    moveRightButton.addEventListener('click', () => game.movePlayerRight());
+    moveUpButton.addEventListener('click', () => game.movePlayerUp());
+    moveDownButton.addEventListener('click', () => game.movePlayerDown());
 
     document.addEventListener('keyup', (event) => {
         if (event.key === 'ArrowLeft') {
             game.movePlayerLeft();
-            updateGameInfo(game);
         } else if (event.key === 'ArrowRight') {
             game.movePlayerRight();
-            updateGameInfo(game);
         } else if (event.key === 'ArrowUp') {
             game.movePlayerUp();
-            updateGameInfo(game);
         } else if (event.key === 'ArrowDown') {
             game.movePlayerDown();
-            updateGameInfo(game);
         }
     });
-};
 
-const updateGameInfo = (game) => {
-    remainingObjectivesEl.innerText = game.remainingObjectives;
-    moveCountEl.innerText = game.moveCount;
+    document.addEventListener('playerMove', () => {
+        remainingObjectivesEl.innerText = game.remainingObjectives;
+        moveCountEl.innerText = game.moveCount;
+    });
 };
