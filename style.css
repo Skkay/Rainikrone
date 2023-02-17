@@ -95,3 +95,16 @@ body {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
+
+.gameInfoContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.gameInfo {
+    color: #ffffff;
+    background-color: #2b3e50;
+    margin: 0px 3px;
+    padding: 10px;
+    border-radius: 10px;
+}
