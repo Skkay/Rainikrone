@@ -18,4 +18,16 @@ fetch('boards/default.json')
         moveRightButton.addEventListener('click', () => game.movePlayerRight());
         moveUpButton.addEventListener('click', () => game.movePlayerUp());
         moveDownButton.addEventListener('click', () => game.movePlayerDown());
+
+        document.addEventListener('keyup', (event) => {
+            if (event.key === 'ArrowLeft') {
+                game.movePlayerLeft();
+            } else if (event.key === 'ArrowRight') {
+                game.movePlayerRight();
+            } else if (event.key === 'ArrowUp') {
+                game.movePlayerUp();
+            } else if (event.key === 'ArrowDown') {
+                game.movePlayerDown();
+            }
+        });
     });
