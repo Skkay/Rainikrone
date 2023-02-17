@@ -10,11 +10,13 @@ class Game {
     player;
     boardFeatures = {};
     remainingObjectives;
+    moveCount;
 
     constructor(board, containerEl) {
         this.board = board;
         this.containerEl = containerEl;
         this.remainingObjectives = 0;
+        this.moveCount = 0;
     }
 
     bootstrap() {
@@ -56,7 +58,7 @@ class Game {
         });
     }
 
-    movePlayerLeft() {
+    movePlayerLeft(collateralMove = false) {
         const destX = this.player.x - 1;
         const destY = this.player.y;
 
@@ -64,11 +66,15 @@ class Game {
             return;
         }
 
+        if (!collateralMove) {
+            this.moveCount += 1;
+        }
+
         this.player.moveTo(destX, destY);
         this.triggerCellEffect();
     }
 
-    movePlayerRight() {
+    movePlayerRight(collateralMove = false) {
         const destX = this.player.x + 1;
         const destY = this.player.y;
 
@@ -76,11 +82,15 @@ class Game {
             return;
         }
 
+        if (!collateralMove) {
+            this.moveCount += 1;
+        }
+
         this.player.moveTo(destX, destY);
         this.triggerCellEffect();
     }
 
-    movePlayerUp() {
+    movePlayerUp(collateralMove = false) {
         const destX = this.player.x;
         const destY = this.player.y - 1;
 
@@ -88,16 +98,24 @@ class Game {
             return;
         }
 
+        if (!collateralMove) {
+            this.moveCount += 1;
+        }
+
         this.player.moveTo(destX, destY);
         this.triggerCellEffect();
     }
 
-    movePlayerDown() {
+    movePlayerDown(collateralMove = false) {
         const destX = this.player.x;
         const destY = this.player.y + 1;
 
         if (!this.canPlayerMoveTo(destX, destY)) {
             return;
+        }
+
+        if (!collateralMove) {
+            this.moveCount += 1;
         }
 
         this.player.moveTo(destX, destY);
@@ -124,13 +142,13 @@ class Game {
         cell.rotateType();
 
         if (this.player.x < this.player.previousX) {
-            this.movePlayerLeft();
+            this.movePlayerLeft(true);
         } else if (this.player.x > this.player.previousX) {
-            this.movePlayerRight();
+            this.movePlayerRight(true);
         } else if (this.player.y < this.player.previousY) {
-            this.movePlayerUp();
+            this.movePlayerUp(true);
         } else if (this.player.y > this.player.previousY) {
-            this.movePlayerDown();
+            this.movePlayerDown(true);
         }
     }
 
@@ -138,13 +156,13 @@ class Game {
         cell.rotateType();
 
         if (this.player.x < this.player.previousX) {
-            this.movePlayerRight();
+            this.movePlayerRight(true);
         } else if (this.player.x > this.player.previousX) {
-            this.movePlayerLeft();
+            this.movePlayerLeft(true);
         } else if (this.player.y < this.player.previousY) {
-            this.movePlayerDown();
+            this.movePlayerDown(true);
         } else if (this.player.y > this.player.previousY) {
-            this.movePlayerUp();
+            this.movePlayerUp(true);
         }
     }
 
