@@ -68,13 +68,13 @@ class Game {
             return;
         }
 
+        this.player.moveTo(destX, destY);
+        this.triggerCellEffect();
+
         if (!collateralMove) {
             this.moveCount += 1;
             document.dispatchEvent(this.playerMoveEvent);
         }
-
-        this.player.moveTo(destX, destY);
-        this.triggerCellEffect();
     }
 
     movePlayerRight(collateralMove = false) {
@@ -85,13 +85,13 @@ class Game {
             return;
         }
 
+        this.player.moveTo(destX, destY);
+        this.triggerCellEffect();
+
         if (!collateralMove) {
             this.moveCount += 1;
             document.dispatchEvent(this.playerMoveEvent);
         }
-
-        this.player.moveTo(destX, destY);
-        this.triggerCellEffect();
     }
 
     movePlayerUp(collateralMove = false) {
@@ -102,13 +102,13 @@ class Game {
             return;
         }
 
+        this.player.moveTo(destX, destY);
+        this.triggerCellEffect();
+
         if (!collateralMove) {
             this.moveCount += 1;
             document.dispatchEvent(this.playerMoveEvent);
         }
-
-        this.player.moveTo(destX, destY);
-        this.triggerCellEffect();
     }
 
     movePlayerDown(collateralMove = false) {
@@ -119,13 +119,13 @@ class Game {
             return;
         }
 
+        this.player.moveTo(destX, destY);
+        this.triggerCellEffect();
+
         if (!collateralMove) {
             this.moveCount += 1;
             document.dispatchEvent(this.playerMoveEvent);
         }
-
-        this.player.moveTo(destX, destY);
-        this.triggerCellEffect();
     }
 
     triggerCellEffect() {
