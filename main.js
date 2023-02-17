@@ -8,26 +8,28 @@ const moveDownButton = document.getElementById('moveDownButton');
 
 fetch('boards/default.json')
     .then((res) => res.json())
-    .then((board) => {
-        const game = new Game(board, document.getElementById('container'));
+    .then((board) => startGame(board));
 
-        game.bootstrap();
-        game.init();
+const startGame = (board) => {
+    const game = new Game(board, document.getElementById('container'));
 
-        moveLeftButton.addEventListener('click', () => game.movePlayerLeft());
-        moveRightButton.addEventListener('click', () => game.movePlayerRight());
-        moveUpButton.addEventListener('click', () => game.movePlayerUp());
-        moveDownButton.addEventListener('click', () => game.movePlayerDown());
+    game.bootstrap();
+    game.init();
 
-        document.addEventListener('keyup', (event) => {
-            if (event.key === 'ArrowLeft') {
-                game.movePlayerLeft();
-            } else if (event.key === 'ArrowRight') {
-                game.movePlayerRight();
-            } else if (event.key === 'ArrowUp') {
-                game.movePlayerUp();
-            } else if (event.key === 'ArrowDown') {
-                game.movePlayerDown();
-            }
-        });
+    moveLeftButton.addEventListener('click', () => game.movePlayerLeft());
+    moveRightButton.addEventListener('click', () => game.movePlayerRight());
+    moveUpButton.addEventListener('click', () => game.movePlayerUp());
+    moveDownButton.addEventListener('click', () => game.movePlayerDown());
+
+    document.addEventListener('keyup', (event) => {
+        if (event.key === 'ArrowLeft') {
+            game.movePlayerLeft();
+        } else if (event.key === 'ArrowRight') {
+            game.movePlayerRight();
+        } else if (event.key === 'ArrowUp') {
+            game.movePlayerUp();
+        } else if (event.key === 'ArrowDown') {
+            game.movePlayerDown();
+        }
     });
+};
