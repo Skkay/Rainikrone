@@ -143,6 +143,8 @@ class Game {
             this.triggerBlackCellEffect(currentCell);
         } else if (currentCell.type === 'objective') {
             this.triggerObjectiveCellEffect(currentCell);
+        } else if (currentCell.type === 'checkpoint') {
+            this.triggerCheckpointCellEffect(currentCell);
         }
     }
 
@@ -220,6 +222,10 @@ class Game {
         if (this.remainingObjectives === 0) {
             this.gameDone = true;
         }
+    }
+
+    triggerCheckpointCellEffect(cell) {
+        this.player.setCheckpoint(cell.x, cell.y);
     }
 
     getCellAtCoords(x, y, variableCellOnly = false) {
