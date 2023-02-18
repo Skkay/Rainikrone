@@ -1,5 +1,5 @@
 const VARIABLE_CELL_TYPES = ['red', 'yellow', 'black', 'green'];
-const VALID_CELL_TYPES = ['objective', 'obstacle', 'random', 'start', 'empty', ...VARIABLE_CELL_TYPES];
+const VALID_CELL_TYPES = ['objective', 'obstacle', 'random', 'start', 'empty', 'checkpoint', ...VARIABLE_CELL_TYPES];
 const CELL_TYPE_ROTATION = {
     yellow: 'red',
     red: 'green',
