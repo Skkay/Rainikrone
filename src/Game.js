@@ -11,12 +11,14 @@ class Game {
     boardFeatures = {};
     remainingObjectives;
     moveCount;
+    gameDone;
 
     constructor(board, containerEl) {
         this.board = board;
         this.containerEl = containerEl;
         this.remainingObjectives = 0;
         this.moveCount = 0;
+        this.gameDone = false;
 
         this.playerMoveEvent = new Event('playerMove');
     }
@@ -64,7 +66,7 @@ class Game {
         const destX = this.player.x - 1;
         const destY = this.player.y;
 
-        if (!this.canPlayerMoveTo(destX, destY)) {
+        if (this.gameDone || !this.canPlayerMoveTo(destX, destY)) {
             return;
         }
 
@@ -81,7 +83,7 @@ class Game {
         const destX = this.player.x + 1;
         const destY = this.player.y;
 
-        if (!this.canPlayerMoveTo(destX, destY)) {
+        if (this.gameDone || !this.canPlayerMoveTo(destX, destY)) {
             return;
         }
 
@@ -98,7 +100,7 @@ class Game {
         const destX = this.player.x;
         const destY = this.player.y - 1;
 
-        if (!this.canPlayerMoveTo(destX, destY)) {
+        if (this.gameDone || !this.canPlayerMoveTo(destX, destY)) {
             return;
         }
 
@@ -115,7 +117,7 @@ class Game {
         const destX = this.player.x;
         const destY = this.player.y + 1;
 
-        if (!this.canPlayerMoveTo(destX, destY)) {
+        if (this.gameDone || !this.canPlayerMoveTo(destX, destY)) {
             return;
         }
 
@@ -216,7 +218,7 @@ class Game {
         this.remainingObjectives -= 1;
 
         if (this.remainingObjectives === 0) {
-            console.log('Done');
+            this.gameDone = true;
         }
     }
 
