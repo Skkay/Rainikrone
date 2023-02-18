@@ -51,7 +51,7 @@ class Game {
             const cell = this.getCellAtCoords(element.position.x, element.position.y);
             cell.updateType(element.type);
 
-            if (element.type === 'start') {
+            if (element.start === true) {
                 const player = new Player(element.position.x, element.position.y);
 
                 this.containerEl.appendChild(player.playerEl);
