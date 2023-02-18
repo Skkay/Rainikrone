@@ -214,7 +214,7 @@ class Game {
     }
 
     triggerObjectiveCellEffect(cell) {
-        cell.updateType('empty');
+        cell.updateType('checkpoint');
 
         this.player.setCheckpoint(cell.x, cell.y);
         this.remainingObjectives -= 1;
