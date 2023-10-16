@@ -43,6 +43,11 @@ const startGame = (board) => {
     });
 };
 
+// Prevent user from changing map when playing the game with the keyboard
+optionMapSelectEl.addEventListener('keydown', (event) => {
+    event.preventDefault();
+});
+
 optionMapSelectEl.addEventListener('change', (event) => {
     const selectedMap = event.target.value;
 
