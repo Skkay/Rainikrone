@@ -1,17 +1,50 @@
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    background-color: #f6f6f6;
+    background-color: #FFFFFF;
 
     --grid-columns: 0;
     --grid-rows: 0;
 }
 
 body {
+    font-family: "Open Sans", sans-serif;
     margin: 0;
     display: flex;
+}
+
+aside {
+    background-color: #F5F7FA;
+    width: 300px;
+    flex-shrink: 0;
+    padding: 10px;
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+}
+
+label {
+    display: block;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+select {
+    display: block;
+    width: 100%;
+    border: 2px solid #E0E4E9;
+    padding: 5px;
+    border-radius: 4px;
 }
 
 .main {
@@ -107,4 +140,9 @@ body {
     margin: 0px 3px;
     padding: 10px;
     border-radius: 10px;
+}
+
+.title {
+    margin-bottom: 16px;
+    text-align: center;
 }

@@ -24,6 +24,8 @@ class Game {
     }
 
     bootstrap() {
+        this.containerEl.innerHTML = '';
+
         const maxX = Math.max(...this.board.cells.map((element) => element.position.x));
         const maxY = Math.max(...this.board.cells.map((element) => element.position.y));
 

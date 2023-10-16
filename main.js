@@ -1,17 +1,15 @@
 import './style.css';
 import Game from './src/Game';
 
-const moveLeftButton = document.getElementById('moveLeftButton');
-const moveRightButton = document.getElementById('moveRightButton');
-const moveUpButton = document.getElementById('moveUpButton');
-const moveDownButton = document.getElementById('moveDownButton');
+const optionMapSelectEl = document.getElementById('optionMapSelect');
 
 const remainingObjectivesEl = document.getElementById('remainingObjectives');
 const moveCountEl = document.getElementById('moveCount');
 
-fetch('boards/default.json')
-    .then((res) => res.json())
-    .then((board) => startGame(board));
+const moveLeftButton = document.getElementById('moveLeftButton');
+const moveRightButton = document.getElementById('moveRightButton');
+const moveUpButton = document.getElementById('moveUpButton');
+const moveDownButton = document.getElementById('moveDownButton');
 
 const startGame = (board) => {
     const game = new Game(board, document.getElementById('container'));
@@ -44,3 +42,18 @@ const startGame = (board) => {
         moveCountEl.innerText = game.moveCount;
     });
 };
+
+optionMapSelectEl.addEventListener('change', (event) => {
+    const selectedMap = event.target.value;
+
+    fetch(`boards/${selectedMap}.json`)
+        .then((res) => res.json())
+        .then((board) => startGame(board));
+});
+
+// Initial load
+const defaultMap = optionMapSelectEl.value;
+
+fetch(`boards/${defaultMap}.json`)
+    .then((res) => res.json())
+    .then((board) => startGame(board));

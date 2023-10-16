@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite App</title>
-    </head>
-    <body>
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+</head>
+
+<body>
+    <aside>
+        <h1 class="title">Options</h1>
+        <div>
+            <label for="optionMapSelect">Map</label>
+            <select id="optionMapSelect">
+                <option value="default" selected>Random 11x11 (default)</option>
+                <option value="random_5x5">Random 5x5</option>
+            </select>
+        </div>
+    </aside>
+    <main>
         <div class="main">
             <div class="gameInfoContainer">
                 <div class="gameInfo">Objective: <span id="remainingObjectives">0</span></div>
@@ -38,6 +51,9 @@
                 </svg>
             </button>
         </div>
-        <script type="module" src="/main.js"></script>
-    </body>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
 </html>
