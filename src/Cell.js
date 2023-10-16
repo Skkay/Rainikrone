@@ -15,6 +15,7 @@ class Cell {
 
     constructor(type, x, y) {
         const cellEl = document.createElement('div');
+        cellEl.setAttribute('id', `cell-${x}-${y}`);
         cellEl.classList.add('cell');
 
         this.cellEl = cellEl;
