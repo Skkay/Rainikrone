@@ -85,7 +85,8 @@
             }
         },
         {
-            "type": "start",
+            "type": "checkpoint",
+            "start": true,
             "position": {
                 "x": 2,
                 "y": 2
