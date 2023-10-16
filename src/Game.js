@@ -63,6 +63,13 @@ class Game {
     }
 
     movePlayerLeft(collateralMove = false) {
+        if (!collateralMove) {
+            this.player.positionHistory.push({
+                x: this.player.x,
+                y: this.player.y,
+            });
+        }
+
         const destX = this.player.x - 1;
         const destY = this.player.y;
 
@@ -80,6 +87,13 @@ class Game {
     }
 
     movePlayerRight(collateralMove = false) {
+        if (!collateralMove) {
+            this.player.positionHistory.push({
+                x: this.player.x,
+                y: this.player.y,
+            });
+        }
+
         const destX = this.player.x + 1;
         const destY = this.player.y;
 
@@ -97,6 +111,13 @@ class Game {
     }
 
     movePlayerUp(collateralMove = false) {
+        if (!collateralMove) {
+            this.player.positionHistory.push({
+                x: this.player.x,
+                y: this.player.y,
+            });
+        }
+
         const destX = this.player.x;
         const destY = this.player.y - 1;
 
@@ -114,6 +135,13 @@ class Game {
     }
 
     movePlayerDown(collateralMove = false) {
+        if (!collateralMove) {
+            this.player.positionHistory.push({
+                x: this.player.x,
+                y: this.player.y,
+            });
+        }
+
         const destX = this.player.x;
         const destY = this.player.y + 1;
 
@@ -165,13 +193,15 @@ class Game {
     triggerGreenCellEffect(cell) {
         cell.rotateType();
 
-        if (this.player.x < this.player.previousX) {
+        const lastPosition = this.player.positionHistory.pop();
+
+        if (this.player.x < lastPosition.x) {
             this.movePlayerRight(true);
-        } else if (this.player.x > this.player.previousX) {
+        } else if (this.player.x > lastPosition.x) {
             this.movePlayerLeft(true);
-        } else if (this.player.y < this.player.previousY) {
+        } else if (this.player.y < lastPosition.y) {
             this.movePlayerDown(true);
-        } else if (this.player.y > this.player.previousY) {
+        } else if (this.player.y > lastPosition.y) {
             this.movePlayerUp(true);
         }
     }
