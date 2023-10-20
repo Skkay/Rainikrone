@@ -1,0 +1,972 @@
+{
+    "cells": [
+        {
+            "type": "objective",
+            "start": false,
+            "position": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 1,
+                "y": 0
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 2,
+                "y": 0
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 3,
+                "y": 0
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 4,
+                "y": 0
+            }
+        },
+        {
+            "type": "obstacle",
+            "start": false,
+            "position": {
+                "x": 5,
+                "y": 0
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 6,
+                "y": 0
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 7,
+                "y": 0
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 8,
+                "y": 0
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 9,
+                "y": 0
+            }
+        },
+        {
+            "type": "objective",
+            "start": false,
+            "position": {
+                "x": 10,
+                "y": 0
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 0,
+                "y": 1
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 1,
+                "y": 1
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 2,
+                "y": 1
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 3,
+                "y": 1
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 4,
+                "y": 1
+            }
+        },
+        {
+            "type": "obstacle",
+            "start": false,
+            "position": {
+                "x": 5,
+                "y": 1
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 6,
+                "y": 1
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 7,
+                "y": 1
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 8,
+                "y": 1
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 9,
+                "y": 1
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 10,
+                "y": 1
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 0,
+                "y": 2
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 1,
+                "y": 2
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 2,
+                "y": 2
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 3,
+                "y": 2
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 4,
+                "y": 2
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 5,
+                "y": 2
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 6,
+                "y": 2
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 7,
+                "y": 2
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 8,
+                "y": 2
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 9,
+                "y": 2
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 10,
+                "y": 2
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 0,
+                "y": 3
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 1,
+                "y": 3
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 2,
+                "y": 3
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 3,
+                "y": 3
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 4,
+                "y": 3
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 5,
+                "y": 3
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 6,
+                "y": 3
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 7,
+                "y": 3
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 8,
+                "y": 3
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 9,
+                "y": 3
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 10,
+                "y": 3
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 0,
+                "y": 4
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 1,
+                "y": 4
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 2,
+                "y": 4
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 3,
+                "y": 4
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 4,
+                "y": 4
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 5,
+                "y": 4
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 6,
+                "y": 4
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 7,
+                "y": 4
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 8,
+                "y": 4
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 9,
+                "y": 4
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 10,
+                "y": 4
+            }
+        },
+        {
+            "type": "obstacle",
+            "start": false,
+            "position": {
+                "x": 0,
+                "y": 5
+            }
+        },
+        {
+            "type": "obstacle",
+            "start": false,
+            "position": {
+                "x": 1,
+                "y": 5
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 2,
+                "y": 5
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 3,
+                "y": 5
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 4,
+                "y": 5
+            }
+        },
+        {
+            "type": "checkpoint",
+            "start": true,
+            "position": {
+                "x": 5,
+                "y": 5
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 6,
+                "y": 5
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 7,
+                "y": 5
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 8,
+                "y": 5
+            }
+        },
+        {
+            "type": "obstacle",
+            "start": false,
+            "position": {
+                "x": 9,
+                "y": 5
+            }
+        },
+        {
+            "type": "obstacle",
+            "start": false,
+            "position": {
+                "x": 10,
+                "y": 5
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 0,
+                "y": 6
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 1,
+                "y": 6
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 2,
+                "y": 6
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 3,
+                "y": 6
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 4,
+                "y": 6
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 5,
+                "y": 6
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 6,
+                "y": 6
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 7,
+                "y": 6
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 8,
+                "y": 6
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 9,
+                "y": 6
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 10,
+                "y": 6
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 0,
+                "y": 7
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 1,
+                "y": 7
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 2,
+                "y": 7
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 3,
+                "y": 7
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 4,
+                "y": 7
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 5,
+                "y": 7
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 6,
+                "y": 7
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 7,
+                "y": 7
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 8,
+                "y": 7
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 9,
+                "y": 7
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 10,
+                "y": 7
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 0,
+                "y": 8
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 1,
+                "y": 8
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 2,
+                "y": 8
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 3,
+                "y": 8
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 4,
+                "y": 8
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 5,
+                "y": 8
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 6,
+                "y": 8
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 7,
+                "y": 8
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 8,
+                "y": 8
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 9,
+                "y": 8
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 10,
+                "y": 8
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 0,
+                "y": 9
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 1,
+                "y": 9
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 2,
+                "y": 9
+            }
+        },
+        {
+            "type": "red",
+            "start": false,
+            "position": {
+                "x": 3,
+                "y": 9
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 4,
+                "y": 9
+            }
+        },
+        {
+            "type": "obstacle",
+            "start": false,
+            "position": {
+                "x": 5,
+                "y": 9
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 6,
+                "y": 9
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 7,
+                "y": 9
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 8,
+                "y": 9
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 9,
+                "y": 9
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 10,
+                "y": 9
+            }
+        },
+        {
+            "type": "objective",
+            "start": false,
+            "position": {
+                "x": 0,
+                "y": 10
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 1,
+                "y": 10
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 2,
+                "y": 10
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 3,
+                "y": 10
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 4,
+                "y": 10
+            }
+        },
+        {
+            "type": "obstacle",
+            "start": false,
+            "position": {
+                "x": 5,
+                "y": 10
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 6,
+                "y": 10
+            }
+        },
+        {
+            "type": "yellow",
+            "start": false,
+            "position": {
+                "x": 7,
+                "y": 10
+            }
+        },
+        {
+            "type": "green",
+            "start": false,
+            "position": {
+                "x": 8,
+                "y": 10
+            }
+        },
+        {
+            "type": "black",
+            "start": false,
+            "position": {
+                "x": 9,
+                "y": 10
+            }
+        },
+        {
+            "type": "objective",
+            "start": false,
+            "position": {
+                "x": 10,
+                "y": 10
+            }
+        }
+    ]
+}
