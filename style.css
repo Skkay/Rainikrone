@@ -1,20 +1,27 @@
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 
     --grid-columns: 0;
     --grid-rows: 0;
+
+    --map-background: #303030;
+    --cell-red: #fc7171;
+    --cell-green: #bde672;
+    --cell-yellow: #f4e484;
+    --cell-black: #6d6658;
+    --cell-objective: #ff9fcc;
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     display: flex;
 }
 
 aside {
-    background-color: #F5F7FA;
-    width: 300px;
+    background-color: #f5f7fa;
+    width: 310px;
     flex-shrink: 0;
     padding: 10px;
 }
@@ -27,7 +34,12 @@ main {
     min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0px;
 }
 
@@ -42,9 +54,13 @@ label {
 select {
     display: block;
     width: 100%;
-    border: 2px solid #E0E4E9;
+    border: 2px solid #e0e4e9;
     padding: 5px;
     border-radius: 4px;
+}
+
+ul {
+    margin: 0;
 }
 
 .main {
@@ -55,7 +71,7 @@ select {
 }
 
 #container {
-    background-color: #303030;
+    background-color: var(--map-background);
     display: grid;
     grid-template-columns: repeat(var(--grid-columns), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
@@ -73,23 +89,23 @@ select {
 }
 
 .red {
-    background-color: #fc7171;
+    background-color: var(--cell-red);
 }
 
 .green {
-    background-color: #bde672;
+    background-color: var(--cell-green);
 }
 
 .yellow {
-    background-color: #f4e484;
+    background-color: var(--cell-yellow);
 }
 
 .black {
-    background-color: #6d6658;
+    background-color: var(--cell-black);
 }
 
 .objective {
-    background-color: #ff9fcc;
+    background-color: var(--cell-objective);
 }
 
 .obstacle {
@@ -143,6 +159,41 @@ select {
 }
 
 .title {
-    margin-bottom: 16px;
+    margin: 16px 0px;
     text-align: center;
+}
+
+.square {
+    width: 1rem;
+    height: 1rem;
+}
+
+.bordered-square {
+    fill: none;
+    stroke: var(--map-background);
+    stroke-width: 5;
+}
+
+.square-red {
+    fill: var(--cell-red);
+}
+
+.square-green {
+    fill: var(--cell-green);
+}
+
+.square-yellow {
+    fill: var(--cell-yellow);
+}
+
+.square-black {
+    fill: var(--cell-black);
+}
+
+.square-objective {
+    fill: var(--cell-objective);
+}
+
+.color-legend {
+    margin-top: 8px;
 }
