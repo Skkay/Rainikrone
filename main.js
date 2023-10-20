@@ -17,6 +17,8 @@ const startGame = (board) => {
     game.bootstrap();
     game.init();
 
+    setInterval(() => game.updateDom(), 100);
+
     remainingObjectivesEl.innerText = game.remainingObjectives;
     moveCountEl.innerText = game.moveCount;
 

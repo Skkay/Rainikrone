@@ -13,7 +13,9 @@ class Cell {
     y;
     cellEl;
 
-    constructor(type, x, y) {
+    domUpdateQueue = [];
+
+    constructor(type, x, y, domUpdateQueue) {
         const cellEl = document.createElement('div');
         cellEl.setAttribute('id', `cell-${x}-${y}`);
         cellEl.classList.add('cell');
@@ -21,10 +23,12 @@ class Cell {
         this.cellEl = cellEl;
         this.x = x;
         this.y = y;
-        this.updateType(type);
+        this.domUpdateQueue = domUpdateQueue;
+
+        this.updateType(type, true);
     }
 
-    updateType(type) {
+    updateType(type, bypassDomQueue = false) {
         if (!VALID_CELL_TYPES.includes(type)) {
             throw Error(`Unknown cell type: ${type}`);
         }
@@ -34,8 +38,13 @@ class Cell {
         }
 
         this.type = type;
-        this.cellEl.classList.remove(...VALID_CELL_TYPES);
-        this.cellEl.classList.add(type);
+
+        if (bypassDomQueue) {
+            this.cellEl.classList.remove(...VALID_CELL_TYPES);
+            this.cellEl.classList.add(type);
+        } else {
+            this.domUpdateQueue.push({ cell: this, type });
+        }
     }
 
     rotateType() {
@@ -44,3 +53,4 @@ class Cell {
 }
 
 export default Cell;
+export { VALID_CELL_TYPES };

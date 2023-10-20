@@ -1,4 +1,4 @@
-import Cell from './Cell';
+import Cell, { VALID_CELL_TYPES } from './Cell';
 import Player from './Player';
 
 const VARIABLE_CELL_TYPES = ['red', 'yellow', 'black', 'green'];
@@ -12,6 +12,9 @@ class Game {
     remainingObjectives;
     moveCount;
     gameDone;
+
+    playerDomUpdateQueue = [];
+    cellDomUpdateQueue = [];
 
     constructor(board, containerEl) {
         this.board = board;
@@ -35,7 +38,7 @@ class Game {
 
         for (let y = 0; y <= maxY; y++) {
             for (let x = 0; x <= maxX; x++) {
-                const cell = new Cell('empty', x, y);
+                const cell = new Cell('empty', x, y, this.cellDomUpdateQueue);
 
                 this.containerEl.appendChild(cell.cellEl);
                 this.cells.push(cell);
@@ -51,10 +54,10 @@ class Game {
     init() {
         this.board.cells.forEach((element) => {
             const cell = this.getCellAtCoords(element.position.x, element.position.y);
-            cell.updateType(element.type);
+            cell.updateType(element.type, true);
 
             if (element.start === true) {
-                const player = new Player(element.position.x, element.position.y);
+                const player = new Player(element.position.x, element.position.y, this.playerDomUpdateQueue);
 
                 this.containerEl.appendChild(player.playerEl);
                 this.player = player;
@@ -62,6 +65,22 @@ class Game {
                 this.remainingObjectives += 1;
             }
         });
+    }
+
+    updateDom() {
+        const cellDomUpdate = this.cellDomUpdateQueue.shift();
+
+        if (cellDomUpdate) {
+            cellDomUpdate.cell.cellEl.classList.remove(...VALID_CELL_TYPES);
+            cellDomUpdate.cell.cellEl.classList.add(cellDomUpdate.type);
+        }
+
+        const playerDomUpdate = this.playerDomUpdateQueue.shift();
+
+        if (playerDomUpdate) {
+            playerDomUpdate.player.playerEl.style.top = `${playerDomUpdate.top}px`;
+            playerDomUpdate.player.playerEl.style.left = `${playerDomUpdate.left}px`;
+        }
     }
 
     movePlayerLeft(collateralMove = false) {
