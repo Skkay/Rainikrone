@@ -24,9 +24,8 @@ class Game {
         this.gameDone = false;
 
         this.playerMoveEvent = new Event('playerMove');
-    }
 
-    bootstrap() {
+        // Preloading map (board size and empty cells)
         this.containerEl.innerHTML = '';
 
         const maxX = Math.max(...this.board.cells.map((element) => element.position.x));
@@ -49,9 +48,8 @@ class Game {
         this.boardFeatures.maxX = maxX;
         this.boardFeatures.minY = 0;
         this.boardFeatures.maxY = maxY;
-    }
 
-    init() {
+        // Loading cells
         this.board.cells.forEach((element) => {
             const cell = this.getCellAtCoords(element.position.x, element.position.y);
             cell.updateType(element.type, true);

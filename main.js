@@ -14,9 +14,6 @@ const moveDownButton = document.getElementById('moveDownButton');
 const startGame = (board) => {
     const game = new Game(board, document.getElementById('container'));
 
-    game.bootstrap();
-    game.init();
-
     setInterval(() => game.updateDom(), 100);
 
     remainingObjectivesEl.innerText = game.remainingObjectives;
