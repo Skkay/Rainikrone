@@ -242,6 +242,11 @@ class Game {
             aboveCell.updateType(redCellTypeRotation[aboveCell.type]);
         }
 
+        const rightCell = this.getCellAtCoords(cell.x + 1, cell.y, true);
+        if (rightCell) {
+            rightCell.updateType(redCellTypeRotation[rightCell.type]);
+        }
+
         const belowCell = this.getCellAtCoords(cell.x, cell.y + 1, true);
         if (belowCell) {
             belowCell.updateType(redCellTypeRotation[belowCell.type]);
@@ -250,11 +255,6 @@ class Game {
         const leftCell = this.getCellAtCoords(cell.x - 1, cell.y, true);
         if (leftCell) {
             leftCell.updateType(redCellTypeRotation[leftCell.type]);
-        }
-
-        const rightCell = this.getCellAtCoords(cell.x + 1, cell.y, true);
-        if (rightCell) {
-            rightCell.updateType(redCellTypeRotation[rightCell.type]);
         }
     }
 
