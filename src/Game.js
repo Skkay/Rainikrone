@@ -1,4 +1,4 @@
-import Cell, { VALID_CELL_TYPES } from './Cell';
+import Cell from './Cell';
 import Player from './Player';
 
 const VARIABLE_CELL_TYPES = ['red', 'yellow', 'black', 'green'];
@@ -69,17 +69,13 @@ class Game {
 
     updateDom() {
         const cellDomUpdate = this.cellDomUpdateQueue.shift();
-
         if (cellDomUpdate) {
-            cellDomUpdate.cell.cellEl.classList.remove(...VALID_CELL_TYPES);
-            cellDomUpdate.cell.cellEl.classList.add(cellDomUpdate.type);
+            cellDomUpdate.cell.updateTypeDom(cellDomUpdate.cell.cellEl, cellDomUpdate.type);
         }
 
         const playerDomUpdate = this.playerDomUpdateQueue.shift();
-
         if (playerDomUpdate) {
-            playerDomUpdate.player.playerEl.style.top = `${playerDomUpdate.top}px`;
-            playerDomUpdate.player.playerEl.style.left = `${playerDomUpdate.left}px`;
+            playerDomUpdate.player.moveToDom(playerDomUpdate.player.playerEl, playerDomUpdate.top, playerDomUpdate.left);
         }
     }
 

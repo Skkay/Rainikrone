@@ -40,11 +40,15 @@ class Player {
         this.y = y;
 
         if (bypassDomQueue) {
-            this.playerEl.style.top = `${top}px`;
-            this.playerEl.style.left = `${left}px`;
+            this.moveToDom(this.playerEl, top, left);
         } else {
             this.domUpdateQueue.push({ player: this, top, left });
         }
+    }
+
+    moveToDom(element, top, left) {
+        element.style.top = `${top}px`;
+        element.style.left = `${left}px`;
     }
 
     setCheckpoint(x, y) {

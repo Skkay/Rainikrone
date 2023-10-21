@@ -40,11 +40,15 @@ class Cell {
         this.type = type;
 
         if (bypassDomQueue) {
-            this.cellEl.classList.remove(...VALID_CELL_TYPES);
-            this.cellEl.classList.add(type);
+            this.updateTypeDom(this.cellEl, type);
         } else {
             this.domUpdateQueue.push({ cell: this, type });
         }
+    }
+
+    updateTypeDom(element, type) {
+        element.classList.remove(...VALID_CELL_TYPES);
+        element.classList.add(type);
     }
 
     rotateType() {
@@ -53,4 +57,3 @@ class Cell {
 }
 
 export default Cell;
-export { VALID_CELL_TYPES };
