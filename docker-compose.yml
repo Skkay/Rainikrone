@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  app:
+    image: rainikrone
+    build:
+      context: .
+    container_name: rainikrone
+    restart: always
+    ports:
+      - 3000:80
