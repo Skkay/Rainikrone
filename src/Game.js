@@ -186,7 +186,7 @@ class Game {
             this.triggerBlackCellEffect(currentCell);
         } else if (currentCell.type === 'objective') {
             this.triggerObjectiveCellEffect(currentCell);
-        } else if (currentCell.type === 'checkpoint') {
+        } else if (currentCell.type === 'checkpoint' || currentCell.type === 'start') {
             this.triggerCheckpointCellEffect(currentCell);
         }
     }
