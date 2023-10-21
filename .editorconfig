@@ -13,3 +13,7 @@ max_line_length = 160
 [docker-compose{,.*}.{yaml,yml}]
 indent_style = space
 indent_size = 2
+
+[.github/workflows/*.yml]
+indent_style = space
+indent_size = 2
