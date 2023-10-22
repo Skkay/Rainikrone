@@ -9,172 +9,180 @@
 </head>
 
 <body>
-    <aside class="side-menu">
-        <h1 class="title">How to play?</h1>
-        <div>
-            <p>
-                Move your pawn left, up, right or down to cross each
-                <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                    <rect class="square-objective" x="15" y="15" width="70" height="70" rx="10" ry="10" />
-                    <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
-                </svg>
-                cell.
-            </p>
-            <div class="color-legend">
-                <span>
-                    <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                        <rect class="square-yellow" x="15" y="15" width="70" height="70" rx="10" ry="10" />
-                        <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
-                    </svg>
-                </span>
-                <ul>
-                    <li>
-                        Becomes
-                        <span>
-                            <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                                <rect class="square-red" x="15" y="15" width="70" height="70" rx="10" ry="10" />
-                                <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
-                            </svg>
-                        </span>
-                    </li>
-                    <li>Moves one cell further</li>
-                </ul>
-            </div>
-            <div class="color-legend">
-                <span>
-                    <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                        <rect class="square-red" x="15" y="15" width="70" height="70" rx="10" ry="10" />
-                        <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
-                    </svg>
-                </span>
-                <ul>
-                    <li>
-                        Becomes
-                        <span>
-                            <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                                <rect class="square-green" x="15" y="15" width="70" height="70" rx="10" ry="10" />
-                                <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
-                            </svg>
-                        </span>
-                    </li>
-                    <li>
-                        Changes the cell's color on contact:
-                        <span>
-                            <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                                <rect class="square-yellow" x="15" y="15" width="70" height="70" rx="10" ry="10" />
-                                <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
-                            </svg>
-                        </span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                        </svg>
-                        <span>
-                            <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                                <rect class="square-red" x="15" y="15" width="70" height="70" rx="10" ry="10" />
-                                <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
-                            </svg>
-                        </span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                        </svg>
-                        <span>
-                            <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                                <rect class="square-green" x="15" y="15" width="70" height="70" rx="10" ry="10" />
-                                <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
-                            </svg>
-                        </span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                        </svg>
-                        <span>
-                            <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                                <rect class="square-black" x="15" y="15" width="70" height="70" rx="10" ry="10" />
-                                <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
-                            </svg>
-                        </span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                        </svg>
-                        <span>
-                            <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                                <rect class="square-yellow" x="15" y="15" width="70" height="70" rx="10" ry="10" />
-                                <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
-                            </svg>
-                        </span>
-                    </li>
-                </ul>
-            </div>
-            <div class="color-legend">
-                <span>
-                    <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                        <rect class="square-green" x="15" y="15" width="70" height="70" rx="10" ry="10" />
-                        <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
-                    </svg>
-                </span>
-                <ul>
-                    <li>
-                        Becomes
-                        <span>
-                            <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                                <rect class="square-yellow" x="15" y="15" width="70" height="70" rx="10" ry="10" />
-                                <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
-                            </svg>
-                        </span>
-                    </li>
-                    <li>Moves to the previous cell (collateral moves are not included)</li>
-                </ul>
-            </div>
-            <div class="color-legend">
-                <span>
-                    <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                        <rect class="square-black" x="15" y="15" width="70" height="70" rx="10" ry="10" />
-                        <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
-                    </svg>
-                </span>
-                <ul>
-                    <li>
-                        Becomes
-                        <span>
-                            <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                                <rect class="square-red" x="15" y="15" width="70" height="70" rx="10" ry="10" />
-                                <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
-                            </svg>
-                        </span>
-                    </li>
-                    <li>Returns to the last colorless cell crossed</li>
-                </ul>
-            </div>
-            <div class="color-legend">
-                <span>
+    <aside>
+        <section class="side-menu">
+            <h1 class="title">How to play?</h1>
+            <div>
+                <p>
+                    Move your pawn left, up, right or down to cross each
                     <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                         <rect class="square-objective" x="15" y="15" width="70" height="70" rx="10" ry="10" />
                         <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
                     </svg>
-                </span>
-                <ul>
-                    <li>Becomes colorless</li>
-                    <li>Validates one objective</li>
-                </ul>
+                    cell.
+                </p>
+                <div class="color-legend">
+                    <span>
+                        <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <rect class="square-yellow" x="15" y="15" width="70" height="70" rx="10" ry="10" />
+                            <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
+                        </svg>
+                    </span>
+                    <ul>
+                        <li>
+                            Becomes
+                            <span>
+                                <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                    <rect class="square-red" x="15" y="15" width="70" height="70" rx="10" ry="10" />
+                                    <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
+                                </svg>
+                            </span>
+                        </li>
+                        <li>Moves one cell further</li>
+                    </ul>
+                </div>
+                <div class="color-legend">
+                    <span>
+                        <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <rect class="square-red" x="15" y="15" width="70" height="70" rx="10" ry="10" />
+                            <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
+                        </svg>
+                    </span>
+                    <ul>
+                        <li>
+                            Becomes
+                            <span>
+                                <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                    <rect class="square-green" x="15" y="15" width="70" height="70" rx="10" ry="10" />
+                                    <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
+                                </svg>
+                            </span>
+                        </li>
+                        <li>
+                            Changes the cell's color on contact:
+                            <span>
+                                <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                    <rect class="square-yellow" x="15" y="15" width="70" height="70" rx="10" ry="10" />
+                                    <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
+                                </svg>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                            </svg>
+                            <span>
+                                <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                    <rect class="square-red" x="15" y="15" width="70" height="70" rx="10" ry="10" />
+                                    <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
+                                </svg>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                            </svg>
+                            <span>
+                                <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                    <rect class="square-green" x="15" y="15" width="70" height="70" rx="10" ry="10" />
+                                    <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
+                                </svg>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                            </svg>
+                            <span>
+                                <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                    <rect class="square-black" x="15" y="15" width="70" height="70" rx="10" ry="10" />
+                                    <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
+                                </svg>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                            </svg>
+                            <span>
+                                <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                    <rect class="square-yellow" x="15" y="15" width="70" height="70" rx="10" ry="10" />
+                                    <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
+                                </svg>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="color-legend">
+                    <span>
+                        <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <rect class="square-green" x="15" y="15" width="70" height="70" rx="10" ry="10" />
+                            <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
+                        </svg>
+                    </span>
+                    <ul>
+                        <li>
+                            Becomes
+                            <span>
+                                <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                    <rect class="square-yellow" x="15" y="15" width="70" height="70" rx="10" ry="10" />
+                                    <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
+                                </svg>
+                            </span>
+                        </li>
+                        <li>Moves to the previous cell (collateral moves are not included)</li>
+                    </ul>
+                </div>
+                <div class="color-legend">
+                    <span>
+                        <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <rect class="square-black" x="15" y="15" width="70" height="70" rx="10" ry="10" />
+                            <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
+                        </svg>
+                    </span>
+                    <ul>
+                        <li>
+                            Becomes
+                            <span>
+                                <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                    <rect class="square-red" x="15" y="15" width="70" height="70" rx="10" ry="10" />
+                                    <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
+                                </svg>
+                            </span>
+                        </li>
+                        <li>Returns to the last colorless cell crossed</li>
+                    </ul>
+                </div>
+                <div class="color-legend">
+                    <span>
+                        <svg class="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <rect class="square-objective" x="15" y="15" width="70" height="70" rx="10" ry="10" />
+                            <rect class="bordered-square" x="5" y="5" width="90" height="90" rx="10" ry="10" />
+                        </svg>
+                    </span>
+                    <ul>
+                        <li>Becomes colorless</li>
+                        <li>Validates one objective</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <h1 class="title">Options</h1>
-        <div>
-            <label for="optionMapSelect">Map</label>
-            <select id="optionMapSelect">
-                <option value="default" selected>Random 11x11 (default)</option>
-                <option value="random_5x5">Random 5x5</option>
-                <option value="empty_11x11">Empty 11x11</option>
-            </select>
-        </div>
+            <h1 class="title">Options</h1>
+            <div>
+                <label for="optionMapSelect">Map</label>
+                <select id="optionMapSelect">
+                    <option value="default" selected>Random 11x11 (default)</option>
+                    <option value="random_5x5">Random 5x5</option>
+                    <option value="empty_11x11">Empty 11x11</option>
+                </select>
+            </div>
+        </section>
+        <hr />
+        <footer>
+            <span id="appVersion">v0.0.0</span>
+            -
+            <a href="http://github.com/Skkay/Rainikrone" target="_blank">Github</a>
+        </footer>
     </aside>
     <main>
         <div class="main">
