@@ -39,3 +39,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
+          build-args: |
+            VITE_APP_VERSION=${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.version'] }}

@@ -1,6 +1,9 @@
 import './style.css';
 import Game from './src/Game';
 
+const APP_VERSION = import.meta.env.VITE_APP_VERSION;
+document.getElementById('appVersion').innerText = `v${APP_VERSION}`;
+
 const optionMapSelectEl = document.getElementById('optionMapSelect');
 
 const remainingObjectivesEl = document.getElementById('remainingObjectives');
