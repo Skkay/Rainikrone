@@ -11,35 +11,49 @@ const moveRightButton = document.getElementById('moveRightButton');
 const moveUpButton = document.getElementById('moveUpButton');
 const moveDownButton = document.getElementById('moveDownButton');
 
+let game;
+
+const handleMoveLeftButtonEvent = () => game.movePlayerLeft();
+
+const handleMoveRightButtonEvent = () => game.movePlayerRight();
+
+const handleMoveUpButtonEvent = () => game.movePlayerUp();
+
+const handleMoveDownButtonEvent = () => game.movePlayerDown();
+
+const handleMoveKeyupEvent = (event) => {
+    if (event.key === 'ArrowLeft') {
+        game.movePlayerLeft();
+    } else if (event.key === 'ArrowRight') {
+        game.movePlayerRight();
+    } else if (event.key === 'ArrowUp') {
+        game.movePlayerUp();
+    } else if (event.key === 'ArrowDown') {
+        game.movePlayerDown();
+    }
+};
+
+const handlePlayerMoveEvent = () => {
+    remainingObjectivesEl.innerText = game.remainingObjectives;
+    moveCountEl.innerText = game.moveCount;
+};
+
 const startGame = (board) => {
-    const game = new Game(board, document.getElementById('container'));
+    game = new Game(board, document.getElementById('container'));
 
     setInterval(() => game.updateDom(), 100);
 
     remainingObjectivesEl.innerText = game.remainingObjectives;
     moveCountEl.innerText = game.moveCount;
 
-    moveLeftButton.addEventListener('click', () => game.movePlayerLeft());
-    moveRightButton.addEventListener('click', () => game.movePlayerRight());
-    moveUpButton.addEventListener('click', () => game.movePlayerUp());
-    moveDownButton.addEventListener('click', () => game.movePlayerDown());
+    moveLeftButton.addEventListener('click', handleMoveLeftButtonEvent);
+    moveRightButton.addEventListener('click', handleMoveRightButtonEvent);
+    moveUpButton.addEventListener('click', handleMoveUpButtonEvent);
+    moveDownButton.addEventListener('click', handleMoveDownButtonEvent);
 
-    document.addEventListener('keyup', (event) => {
-        if (event.key === 'ArrowLeft') {
-            game.movePlayerLeft();
-        } else if (event.key === 'ArrowRight') {
-            game.movePlayerRight();
-        } else if (event.key === 'ArrowUp') {
-            game.movePlayerUp();
-        } else if (event.key === 'ArrowDown') {
-            game.movePlayerDown();
-        }
-    });
+    document.addEventListener('keyup', handleMoveKeyupEvent);
 
-    document.addEventListener('playerMove', () => {
-        remainingObjectivesEl.innerText = game.remainingObjectives;
-        moveCountEl.innerText = game.moveCount;
-    });
+    document.addEventListener('playerMove', handlePlayerMoveEvent);
 };
 
 // Prevent user from changing map when playing the game with the keyboard
