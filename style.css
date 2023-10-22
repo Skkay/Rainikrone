@@ -19,13 +19,6 @@ body {
     display: flex;
 }
 
-aside {
-    background-color: #f5f7fa;
-    width: 310px;
-    flex-shrink: 0;
-    padding: 10px;
-}
-
 main {
     display: flex;
     flex-grow: 1;
@@ -63,6 +56,14 @@ ul {
     margin: 0;
 }
 
+.side-menu {
+    background-color: #f5f7fa;
+    width: 310px;
+    flex-shrink: 0;
+    padding: 10px;
+    border-right: 1px solid #DCDEE1;
+}
+
 .main {
     max-width: 1280px;
     margin: 0 auto;
@@ -80,36 +81,49 @@ ul {
     margin: 10px;
     padding: 5px;
     position: relative;
+    border-radius: 6px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 .cell {
     background-color: #eeeeee;
     width: 50px;
     height: 50px;
+    border-radius: 4px;
+    outline: 1px solid var(--map-background);
 }
 
 .red {
     background-color: var(--cell-red);
+    animation: pop 0.5s ease-in-out;
 }
 
 .green {
     background-color: var(--cell-green);
+    animation: pop 0.5s ease-in-out;
 }
 
 .yellow {
     background-color: var(--cell-yellow);
+    animation: pop 0.5s ease-in-out;
 }
 
 .black {
     background-color: var(--cell-black);
+    animation: pop 0.5s ease-in-out;
 }
 
 .objective {
     background-color: var(--cell-objective);
+    animation: pop 0.5s ease-in-out;
 }
 
 .obstacle {
     visibility: hidden;
+}
+
+.checkpoint {
+    animation: disappear 0.5s ease-in-out;
 }
 
 #player {
@@ -129,6 +143,7 @@ ul {
     display: inline-flex;
     justify-content: center;
     border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .moveButton:hover {
@@ -156,6 +171,7 @@ ul {
     margin: 0px 3px;
     padding: 10px;
     border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .title {
@@ -196,4 +212,30 @@ ul {
 
 .color-legend {
     margin-top: 8px;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes disappear {
+    0% {
+        transform: scale(1);
+        background-color: var(--cell-objective);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(0);
+        background-color: var(--cell-objective);
+    }
 }

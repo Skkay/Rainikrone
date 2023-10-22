@@ -48,6 +48,7 @@ class Cell {
 
     updateTypeDom(element, type) {
         element.classList.remove(...VALID_CELL_TYPES);
+        void element.offsetWidth; // Used to replay the animation
         element.classList.add(type);
     }
 
