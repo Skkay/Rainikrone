@@ -1,6 +1,16 @@
 import fs from 'fs';
 import Jimp from 'jimp';
 
+/**
+ * Converts an RGB color object to a hexadecimal color string.
+ *
+ * @param {Object} color - An object representing an RGB color.
+ * @param {number} color.r - The red component of the color (0-255).
+ * @param {number} color.g - The green component of the color (0-255).
+ * @param {number} color.b - The blue component of the color (0-255).
+ *
+ * @returns {string} The hexadecimal representation of the color, prefixed with a hash (#).
+ */
 const rgbToHex = ({ r, g, b }) =>
     '#' +
     [r, g, b]
@@ -10,6 +20,16 @@ const rgbToHex = ({ r, g, b }) =>
         })
         .join('');
 
+/**
+ * Returns the type of a cell based on its hex color code.
+ *
+ * @param {Object} cellsColors - An object containing arrays of hex color codes for different cell types.
+ * @param {string} hex - The hex color code of the cell.
+ *
+ * @returns {string} - The type of the cell.
+ *
+ * @throws {Error} - If the cell type cannot be determined.
+ */
 const getTypeByHex = (cellsColors, hex) => {
     if (cellsColors.red.includes(hex)) {
         return 'red';

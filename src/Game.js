@@ -16,6 +16,10 @@ class Game {
     playerDomUpdateQueue = [];
     cellDomUpdateQueue = [];
 
+    /**
+     * @param {object} board - The board object for the game.
+     * @param {HTMLElement} containerEl - The container element for the game.
+     */
     constructor(board, containerEl) {
         this.board = board;
         this.containerEl = containerEl;
@@ -65,6 +69,9 @@ class Game {
         });
     }
 
+    /**
+     * Updates the DOM with the latest changes to the game state. This method should be called in a loop.
+     */
     updateDom() {
         const cellDomUpdate = this.cellDomUpdateQueue.shift();
         if (cellDomUpdate) {
@@ -77,6 +84,11 @@ class Game {
         }
     }
 
+    /**
+     * Moves the player one cell to the left and triggers the cell effect.
+     *
+     * @param {boolean} [collateralMove=false] - Whether this move is a collateral move (not induced by the player) or not.
+     */
     movePlayerLeft(collateralMove = false) {
         if (!collateralMove) {
             this.player.positionHistory.push({
@@ -101,6 +113,11 @@ class Game {
         }
     }
 
+    /**
+     * Moves the player one cell to the right and triggers the cell effect.
+     *
+     * @param {boolean} [collateralMove=false] - Whether this move is a collateral move (not induced by the player) or not.
+     */
     movePlayerRight(collateralMove = false) {
         if (!collateralMove) {
             this.player.positionHistory.push({
@@ -125,6 +142,11 @@ class Game {
         }
     }
 
+    /**
+     * Moves the player up by one cell and triggers the cell effect.
+     *
+     * @param {boolean} [collateralMove=false] - Whether this move is a collateral move (not induced by the player) or not.
+     */
     movePlayerUp(collateralMove = false) {
         if (!collateralMove) {
             this.player.positionHistory.push({
@@ -149,6 +171,11 @@ class Game {
         }
     }
 
+    /**
+     * Moves the player down by one cell and triggers the cell effect.
+     *
+     * @param {boolean} [collateralMove=false] - Whether this move is a collateral move (not induced by the player) or not.
+     */
     movePlayerDown(collateralMove = false) {
         if (!collateralMove) {
             this.player.positionHistory.push({
@@ -173,6 +200,9 @@ class Game {
         }
     }
 
+    /**
+     * Triggers the effect of the current cell based on its type.
+     */
     triggerCellEffect() {
         const currentCell = this.getCellAtCoords(this.player.x, this.player.y);
 
@@ -191,6 +221,11 @@ class Game {
         }
     }
 
+    /**
+     * Triggers the yellow cell effect (becomes red and moves the player one cell further).
+     *
+     * @param {Cell} cell - The cell to trigger the effect on.
+     */
     triggerYellowCellEffect(cell) {
         cell.rotateType();
 
@@ -205,6 +240,11 @@ class Game {
         }
     }
 
+    /**
+     * Triggers the green cell effect (becomes yellow and moves the player to its previous cell, collateral moves not included).
+     *
+     * @param {Cell} cell - The cell to trigger the effect on.
+     */
     triggerGreenCellEffect(cell) {
         cell.rotateType();
 
@@ -221,6 +261,11 @@ class Game {
         }
     }
 
+    /**
+     * Triggers the red cell effect (becomes green and changes the cell's color on contact: Yellow -> Red -> Green -> Black -> Yellow).
+     *
+     * @param {Cell} cell - The cell to trigger the effect on.
+     */
     triggerRedCellEffect(cell) {
         cell.rotateType();
 
@@ -252,12 +297,22 @@ class Game {
         }
     }
 
+    /**
+     * Triggers the black cell effect (becomes red and moves the player to the last colorless cell crossed).
+     *
+     * @param {Cell} cell - The cell to trigger the effect on.
+     */
     triggerBlackCellEffect(cell) {
         cell.rotateType();
 
         this.player.moveTo(this.player.checkpointX, this.player.checkpointY);
     }
 
+    /**
+     * Triggers the objective cell effect (becomes colorless and validates an objective).
+     *
+     * @param {Cell} cell - The cell to trigger the effect on.
+     */
     triggerObjectiveCellEffect(cell) {
         cell.updateType('checkpoint');
 
@@ -269,10 +324,24 @@ class Game {
         }
     }
 
+    /**
+     * Triggers the checkpoint cell effect (set player's checkpoint position).
+     *
+     * @param {Cell} cell - The cell to trigger the effect on.
+     */
     triggerCheckpointCellEffect(cell) {
         this.player.setCheckpoint(cell.x, cell.y);
     }
 
+    /**
+     * Returns the cell object at the given coordinates.
+     *
+     * @param {number} x - The x-coordinate of the cell.
+     * @param {number} y - The y-coordinate of the cell.
+     * @param {boolean} [variableCellOnly=false] - If true, only returns variable cells (Yellow, Green, Black or Red).
+     *
+     * @returns {(Cell|undefined)} - The cell object at the given coordinates.
+     */
     getCellAtCoords(x, y, variableCellOnly = false) {
         if (variableCellOnly === true) {
             return this.cells.find((cell) => cell.x === x && cell.y === y && VARIABLE_CELL_TYPES.includes(cell.type));
@@ -281,6 +350,14 @@ class Game {
         return this.cells.find((cell) => cell.x === x && cell.y === y);
     }
 
+    /**
+     * Checks if the player can move to the given coordinates.
+     *
+     * @param {number} x - The x-coordinate to check.
+     * @param {number} y - The y-coordinate to check.
+     *
+     * @returns {boolean} - Returns true if the player can move to the given coordinates, false otherwise.
+     */
     canPlayerMoveTo(x, y) {
         // Check if position is out of boundaries
         if (x < this.boardFeatures.minX || y < this.boardFeatures.minY || x > this.boardFeatures.maxX || y > this.boardFeatures.maxY) {

@@ -15,6 +15,12 @@ class Cell {
 
     domUpdateQueue = [];
 
+    /**
+     * @param {string} type - The type of the cell.
+     * @param {number} x - The x-coordinate of the cell.
+     * @param {number} y - The y-coordinate of the cell.
+     * @param {Array} domUpdateQueue - The queue of cells to update in the DOM.
+     */
     constructor(type, x, y, domUpdateQueue) {
         const cellEl = document.createElement('div');
         cellEl.setAttribute('id', `cell-${x}-${y}`);
@@ -28,6 +34,14 @@ class Cell {
         this.updateType(type, true);
     }
 
+    /**
+     * Updates the type of the cell.
+     *
+     * @param {string} type - The new type of the cell.
+     * @param {boolean} [bypassDomQueue=false] - Whether to bypass the DOM update queue and update the cell immediately.
+     *
+     * @throws {Error} If the type is not a valid cell type.
+     */
     updateType(type, bypassDomQueue = false) {
         if (!VALID_CELL_TYPES.includes(type)) {
             throw Error(`Unknown cell type: ${type}`);
@@ -46,12 +60,21 @@ class Cell {
         }
     }
 
+    /**
+     * Updates the type of a DOM element representing a cell.
+     *
+     * @param {HTMLElement} element - The DOM element to update.
+     * @param {string} type - The new type of the cell.
+     */
     updateTypeDom(element, type) {
         element.classList.remove(...VALID_CELL_TYPES);
         void element.offsetWidth; // Used to replay the animation
         element.classList.add(type);
     }
 
+    /**
+     * Rotates the type of the cell (Yellow -> Red -> Green -> Yellow ; Black -> Red).
+     */
     rotateType() {
         this.updateType(CELL_TYPE_ROTATION[this.type]);
     }
